@@ -12,16 +12,23 @@
         box-sizing: border-box;
     }
     body {
-         background: linear-gradient(black,black,rgb(211, 211, 211)); 
+        background: linear-gradient(black,black,rgb(163, 163, 163)); 
     } 
 
     header{
+        /* border: 1px solid red; */
         display: flex;
         flex-direction: column;
+        /* align-content: space-around; */
     }
+    
     .model_name .model_name_h1{
         font-size: 2.9rem;
-        margin: 0.5em;
+        margin: 0.3em;
+    }
+    .tick_icon{
+        width: 50px;
+        transform: translate(300px,-80px);
     }
 
     .description{
@@ -30,32 +37,68 @@
         margin: 0.5em;
     }
     .description p{
-        /* padding: 0.5em; */
-        font-size: large;
+        font-size: 1.6rem;
     }
 
+    main{
+        margin: 0.5em;
+    }
+
+    .social-icons{
+        width: 25%;
+        position: absolute;
+        /* z-index:2; */
+        right: 15px;
+        /* top: 10px; */
+        /* border: 1px solid red; */
+    }
+
+    .frame{
+        width: 95%;
+        transform: perspective(395px)rotateY(345deg);
+    margin-top: 100px;
+    border: 3px solid black;
+    border-radius: 5px;
+    }
+    .social-icons i{
+        width: 35px;
+        background: black;
+        border-radius: 15px;
+        margin: 0.2em;
+        padding:2px;
+    }
     .frame img{
         width: 100%;
-    }
-
-    .information ul{
-        list-style: none;
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .information ul li{
-        font-size: 1.6em;
+        max-width: 960px;
     }
 
 main{
     padding: 1em;
 }
-    div.scrollmenu {
-  background-color: #333;
-  overflow: auto;
-  white-space: nowrap;
+
+.container{
+    margin:1em 0;
 }
+.container2{
+    overflow: hidden;
+    
+}
+
+.scrollmenu_title{
+    text-align: center;
+}
+    div.scrollmenu {
+ padding: 0.5em;
+  background-color: rgb(170, 170, 170);
+  white-space: nowrap;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+div.scrollmenu::-webkit-scrollbar {
+       display: none;
+ }
 
 div.scrollmenu img {
   display: inline-block;
@@ -63,52 +106,191 @@ div.scrollmenu img {
   text-align: center;
   padding: 14px;
   text-decoration: none;
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 160px;
+  max-height: 180px;
 }
 
-footer{
-    /* position: absolute; */
-    padding: 0;
-    margin: .5em;
-    bottom: 0;
+.information{
+    margin: 0 1em;
 }
+.information_list{
+    display: flex;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+    .information ul li{
+        font-size: 1.6rem;
+    }
+/* =======================IMAGE SETTINGS======================= */
+
+
+    .myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.myImg:hover 
+{
+    opacity: 0.7;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
 
 @media screen and (min-width: 720px) {
 
     header{
         flex-direction: row;
     }   
+    .model_name{
+        border-right: 1px solid #fff;
+        /* max-width: 200px; */
+    }
+    .tick_icon{
+        width: 50px;
+        transform: translate(400px,-20px);
+    }
 
     .description{
         border-top: none;
-        border-left: 1px solid #fff;
-        border-bottom: 1px solid #fff;
+        padding: 0.3em;
+        border-bottom: 2px solid #fff;
+        /* margin-top: 0.8em; */
         max-width: 360px;
     }
+    .description p{
+        font-size: 1.3rem;
+    }
+
+    .frame{
+        /* float: right; */
+        width: 75%;
+        margin: 3rem 0;
+        margin-left: 1em;
+    }
+
+    .social-icons{
+        width: 15%;
+    }
+
+ .information{
+     /* border: 1px solid red; */
+     width: 90%;
+     margin: 0 auto;
+ }
+    .information_list{
+    text-align: center;
+    flex-direction: row;
+    font-size: 1.4rem;
+}
+.information_list_item{
+    padding: 0 0.5em;
+}
 
 }
 
-@media screen and (min-width: 960px)
+@media screen and (min-width: 1280px)
 {
-    
+    header{
+        /* margin-top: 1em; */
+        width: 50%;
+    }
+
+    body{
+        padding: 1em;
+        background: black;
+    }
+
+    .workarea{
+        background: linear-gradient(black,black,rgb(163, 163, 163)); 
+    }
     .model_name .model_name_h1{
         font-size: 4rem;
-        border: 2px solid white;
     }
     .container{
         width: 90%;
         max-width: 960px;
+        max-height: 50vh;
         padding:0;
-        margin: 0;
         border: 2px solid #fff;
     }
     .container2
     {   padding:1em;
-        margin: 0; 
         width:100%;
-        height: 40vh;
-        transform: translate(40px,60px);
+        max-height: 50vh;
+        transform: translate(25px,25px);
         border:2px solid #fff;
         display: flex;
         align-content: center;
@@ -125,47 +307,52 @@ footer{
         max-width: 360px;
         height: 75%;
         margin: 0.5em;
+        padding: 1em;
+        /* transform: translateY(1em); */
     }
-}
-
-@media screen and (min-width: 1280px){
     
     header
     {
         margin-bottom: 3em;
     }
-    .container
-    {
-        margin: 2em 0;
+    .tick_icon{
+        width: 50px;
+        transform: translate(300px,-20px);
     }
     .container2{
         margin-bottom: 2em;
     }
+    div.scrollmenu{
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
     .frame
     {
         position: absolute;
-        right: 0;
-        top:25%;
-        z-index:-1;
-        width: 52%;
-        /* transform:  */
+        right: 9%;
+        top:14%;
+        float: right;
+        width: 45%;
+        transform: perspective(395px)rotateY(345deg);
+    margin-top: 100px;
+    border: 3px solid black;
+    border-radius: 5px;
     }
     .frame_img
     {
         width: 70%;
+        
     }
 
     .container{
         width: 45%;
     }
     .container2{
-        height: 60vh;
+        /* max-height: 60vh; */
     }
 
-    .information
-    {
-        /* position: fixed; */
-        /* bottom: 50px; */
+    .information{
+        width:50%;
     }
 }
 

@@ -4,26 +4,28 @@
     <%- include('../partials/head');   %>
 </head>
 <body>
-    <header>
-        <%- include('../partials/name');%>
-        <%- include('../partials/description');%>
-    </header>
-    <main>
-        <%- include('../partials/frame'); %>
-        <%- include('../partials/information'); %>
-
-        <div class="container">
-            <div class="container2">
-                <!-- Photo-shoot -->
-        <%- include('../partials/photo-shoot'); %>
-
-        <!-- Past-work -->
-        <%- include('../partials/past-work'); %>
+    <div class="workarea">
+        <header>
+            <%- include('../partials/name');%>
+            <%- include('../partials/description');%>
+        </header>
+        <main>
+            <%- include('../partials/frame'); %>
+    
+            <div class="container">
+                <div class="container2">
+                    <!-- Photo-shoot -->
+            <%- include('../partials/photo-shoot'); %>
+    
+            <!-- Past-work -->
+            <%- include('../partials/past-work'); %>
+                </div>
             </div>
-        </div>
-    </main>
-    <footer>
-        <%- include('../partials/footer'); %>
-    </footer>
+        </main>
+        <footer>
+            <%- include('../partials/information'); %>
+        </footer>
+    </div>
+    <%- include('../partials/script'); %>
 </body>
 </html>
