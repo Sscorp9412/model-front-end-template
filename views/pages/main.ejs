@@ -6,7 +6,7 @@
 <body>
     <div class="workarea">
         <header>
-            <%- include('../partials/name');%>
+            <%- include('../partials/name', {name:biodata[0].name});%>
             <%- include('../partials/description');%>
         </header>
         <main>
@@ -23,7 +23,7 @@
             </div>
         </main>
         <footer>
-            <%- include('../partials/information'); %>
+            <%- include('../partials/information',{info:biodata[0]}); %>
         </footer>
     </div>
     <%- include('../partials/script'); %>
