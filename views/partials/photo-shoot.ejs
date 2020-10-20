@@ -1,13 +1,13 @@
 <div class="photo-shoot">
 
     <h2 class="scrollmenu_title">PHOTO SHOOT</h2>
+
     <div class="scrollmenu">
-        <img class="myImg" src="/images/models/1.jpg" >
-        <img class="myImg" src="/images/models/2.jpg" >
-        <img class="myImg" src="/images/models/3.jpg" >
-        <img class="myImg" src="/images/models/4.jpg" >
-        <img class="myImg" src="/images/models/5.jpg" >
-      </div>
+      <% for(image in images) {%>
+          <img class="myImg" src=<%= images[image] %> >
+      <% }%>
+  </div>
+</div>
 
       <div id="myModal" class="modal">
 
@@ -20,4 +20,3 @@
         <!-- Modal Caption (Image Text) -->
         <div id="caption"></div>
       </div>
-</div>

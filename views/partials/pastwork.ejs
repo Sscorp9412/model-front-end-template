@@ -3,13 +3,13 @@
     <h2 class="scrollmenu_title" >PAST WORK</h2>
 
     <div class="scrollmenu">
-        <img class="myImg" src="/images/models/6.jpg" >
-        <img class="myImg" src="/images/models/7.jpg" >
-        <img class="myImg" src="/images/models/8.jpg" >
-        <img class="myImg" src="/images/models/9.jpg" >
-        <img class="myImg" src="/images/models/10.jpg" >
+        <% for(image in images) {%>
+            <img class="myImg" src=<%= images[image] %> >
+        <% }%>
+        
+        <iframe class="video" src="https://www.youtube.com/embed/coQZPscoaBs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
     </div>
-
     <div id="myModal" class="modal">
 
         <!-- The Close Button -->

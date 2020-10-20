@@ -12,6 +12,7 @@ var captionText = document.querySelector("#caption");
 document.querySelectorAll(".myImg").forEach(img=>{
 
 img.onclick = function(){
+  document.querySelector('.container2').style.transform="none";
   modal.style.display = "block";
   modalImg.src = this.src;
   captionText.innerHTML = this.alt;
@@ -22,6 +23,7 @@ img.onclick = function(){
 var span = document.getElementsByClassName("close")[0];
 
 span.onclick = function() {
+  document.querySelector('.container2').style.transform="translate(25px,25px)";
   modal.style.display = "none";
 }
     });

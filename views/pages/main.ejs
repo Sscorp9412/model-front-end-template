@@ -10,22 +10,24 @@
             <%- include('../partials/description');%>
         </header>
         <main>
-            <%- include('../partials/frame'); %>
+            <%- include('../partials/frame',{images: biodata[0].images}); %>
     
             <div class="container">
                 <div class="container2">
                     <!-- Photo-shoot -->
-            <%- include('../partials/photo-shoot'); %>
+            <%- include('../partials/photo-shoot',{images: biodata[0].images}); %>
     
             <!-- Past-work -->
-            <%- include('../partials/past-work'); %>
+            <%- include('../partials/pastwork',{images: biodata[0].images}); %>
                 </div>
             </div>
+            
         </main>
         <footer>
             <%- include('../partials/information',{info:biodata[0]}); %>
         </footer>
     </div>
     <%- include('../partials/script'); %>
+    
 </body>
 </html>
