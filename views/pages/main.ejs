@@ -6,25 +6,25 @@
 <body>
     <div class="workarea">
         <header>
-            <%- include('../partials/name', {name:biodata[0].name});%>
-            <%- include('../partials/description');%>
+            <%- include('../partials/name', {fname:biodata[0].fname,lname: biodata[0].lname});%>
+            <%- include('../partials/description',{des: biodata[0].bio});%>
         </header>
         <main>
-            <%- include('../partials/frame',{images: biodata[0].images}); %>
+            <%- include('../partials/frame',{image: biodata[0].profilepic, sociallinks: biodata[0].sociallinks}); %>
     
             <div class="container">
                 <div class="container2">
                     <!-- Photo-shoot -->
-            <%- include('../partials/photo-shoot',{images: biodata[0].images}); %>
+            <%- include('../partials/photo-shoot',{images: biodata[0].featuredPhotos}); %>
     
             <!-- Past-work -->
-            <%- include('../partials/pastwork',{images: biodata[0].images}); %>
+            <%- include('../partials/pastwork',{pastwork: biodata[0].pastWork}); %>
                 </div>
             </div>
             
         </main>
         <footer>
-            <%- include('../partials/information',{info:biodata[0]}); %>
+            <%- include('../partials/information',{age:biodata[0].age,dob: biodata[0].dob,height: biodata[0].height}); %>
         </footer>
     </div>
     <%- include('../partials/script'); %>

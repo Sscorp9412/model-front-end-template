@@ -3,23 +3,44 @@
     <h2 class="scrollmenu_title" >PAST WORK</h2>
 
     <div class="scrollmenu">
-        <% for(image in images) {%>
-            <img class="myImg" src=<%= images[image] %> >
-        <% }%>
-        
-        <iframe class="video" src="https://www.youtube.com/embed/coQZPscoaBs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="pastwork-photos">
+            <% for(pw in pastwork) {%>
+                <% if(pastwork[pw].content_type=="photo") {%>
+                    <div class="overlay_container">
+                        <img class="overlay_image img" src=<%= "past-work/"+pastwork[pw].content_type+"/"+pastwork[pw].filename %> >
+                        <div class="overlay_middle">
+                          <a class="overlay_text" href=<%= "past-work/"+pastwork[pw].content_type+"/"+pastwork[pw].filename %> target="_blank">visit</a>
+                        </div>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+        <div class="pastwork-video">
+            <% for(pw in pastwork) {%>
+                <% if(pastwork[pw].content_type=="video") {%>
+                    <div class="overlay_container">
+                        <img class="overlay_image img" src="past-work/video/link_icon.jpg" >
+                        <div class="overlay_middle">
+                          <a class="overlay_text" href=<%= "past-work/"+pastwork[pw].content_type+"/"+pastwork[pw].filename %> target="_blank">visit</a>
+                        </div>
+                    </div>
+                <% } %>
+            <% }%>
+        </div>
+        <div class="pastwork-video">
+            <% for(pw in pastwork) {%>
+                <% if(pastwork[pw].content_type=="link") {%>
+                    <div class="overlay_container">
+                        <img class="overlay_image img" src="past-work/link/linkicon.jpg" >
+                        <div class="overlay_middle">
+                          <a class="overlay_text" href=<%= pastwork[pw].link %> target="_blank">visit</a>
+                        </div>
+                    </div>
+                <% } %>
+            <% }%>
+        </div>
+
         
     </div>
-    <div id="myModal" class="modal">
-
-        <!-- The Close Button -->
-        <span class="close">&times;</span>
-      
-        <!-- Modal Content (The Image) -->
-        <img class="modal-content" id="img01">
-      
-        <!-- Modal Caption (Image Text) -->
-        <div id="caption"></div>
-      </div>
 
 </div>
